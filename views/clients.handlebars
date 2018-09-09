@@ -1,0 +1,95 @@
+<div class="clientSide">
+    {{!-- <img class="image" src="./img/cover4e.jpeg" alt=""> --}}
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="mb-5">Good day customer</h3>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 border border-rounded bg-light">
+                <h3 class="text-center w-100 mb-5 text-dark  ">Place order using the following</h3>
+                <form action="/order" method="POST">
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="form-row align-items-center">
+                                <div class="col-auto my-1">
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect">Choose coffee:</label>
+                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                        <option selected>Choose coffee</option>
+                                        <option name="coffee" value="latte">Café Latte</option>
+                                        <option name="coffee" value="cappuccino">Cappuccino</option>
+                                        <option name="coffee" value="espresso">Espresso</option>
+                                        <option name="coffee" value="flat">Flat White</option>
+                                        <option name="coffee" value="long">Long Black</option>
+                                        <option name="coffee" value="macchiato">Macchiato</option>
+                                        <option name="coffee" value="irish">Irish Coffee</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Choose type:</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                            <option selected>Choose type</option>
+                                            <option name="type" value="black">Black</option>
+                                            <option name="type" value="milk">Milk</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Cups of sugar</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                            <option selected>Choose sugar</option>
+                                            <option name="spoon" value="1">1 spoon</option>
+                                            <option name="spoon" value="2">2 spoon</option>
+                                            <option name="spoon" value="3">3 spoon</option>
+                                            <option name="spoon" value="4">4 spoon</option>
+                                            <option name="spoon" value="5">5 spoon</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto my-1">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect">Payment method</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                            <option selected>choose payment</option>
+                                            <option name="payment" value="1">Cash</option>
+                                            <option name="payment" value="2">Bitcoin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="mt-4">Total price : R {{total}}</h4>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Pay bill</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class='centered'>
+        <h6>Copyright &copy; 2018. Ikofu </h6>
+    </footer>
+
+</div>
