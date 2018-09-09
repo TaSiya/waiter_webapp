@@ -1,0 +1,42 @@
+.welcome{
+    font-family: 'Oswald', sans-serif;
+}
+
+.front {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+.centered {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.client {
+    position: absolute;
+    top: 50%;
+    font-family: 'Slabo 27px', serif;
+    /* transform: translate(0%, -50%); */
+}
+
+.employee {
+    position: absolute;
+    top: 50%;
+    left:75%;
+    font-family: 'Slabo 27px', serif;
+}
