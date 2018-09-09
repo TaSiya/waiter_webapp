@@ -55,7 +55,8 @@ function errorHandler(err, req, res, next) {
     res.render('error', { error: err });
   }
 
-app.get('/', clientRoutes.home);
+app.get('/', clientRoutes.landing);
+app.get('/client', clientRoutes.home)
 
 app.use(errorHandler);
 

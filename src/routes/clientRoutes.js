@@ -1,5 +1,5 @@
 module.exports = function (client) {
-    async function home (req, res) {
+    async function landing (req, res) {
         try {
 
             res.render('index');
@@ -7,7 +7,16 @@ module.exports = function (client) {
             res.send(err.stack);
         }
     }
+    async function home (req, res) {
+        try {
+
+            res.render('clients');
+        } catch(err) {
+
+        }
+    }
     return {
+        landing,
         home
     }
 }
