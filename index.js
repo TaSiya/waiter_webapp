@@ -50,8 +50,14 @@ const employeeServices = EmployeeServices(pool);
 const clientRoutes = ClientRoutes(clientServices);
 const employeeRoutes = EmployeeRoutes(employeeServices);
 
+function errorHandler(err, req, res, next) {
+    res.status(500);
+    res.render('error', { error: err });
+  }
+
 app.get('/', clientRoutes.home);
 
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 2018 ;
 app.listen(PORT, function () {
