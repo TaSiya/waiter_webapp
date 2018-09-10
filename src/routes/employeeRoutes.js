@@ -1,8 +1,8 @@
-module.exports = function (employee) {
+module.exports = function (employeeService) {
     async function home (req, res, next) {
         try{
-
-            res.render('employee')
+            let users = await employeeService.allEmployees();
+            res.render('employee', {users})
         } catch (err) {
             next(err);
         }
@@ -10,12 +10,17 @@ module.exports = function (employee) {
     async function getData (req, res, next) {
         try{
             let user = req.body.name_employee;
-            console.log(user);
-            if(user === 'admin'){
+            let pass = parseInt(req.body.pass_code);
+            console.log(pass);
+            let userData = await employeeService.selectEmployee(user);
+            if(user === 'admin' && pass === userData[0].passcode){
                 res.render('days');
             }
-            else {
+            else if(user !== '' && pass === userData[0].passcode){
                 res.render('logged');
+            }
+            else{
+                req.flash('info', 'Please enter a valid username or passcode');
             }
             
         } catch (err) {

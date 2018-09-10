@@ -38,7 +38,7 @@ if (process.env.DATABASE_URL && !local){
     useSSL = true;
 }
 // which db connection to use
-const connectionString = process.env.DATABASE_URL || 'postgresql://tasiya:#@eatdirt18@localhost:5432/waiter_database';
+const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/waiter_database';
 
 const pool = new Pool({
     connectionString,
@@ -57,7 +57,7 @@ function errorHandler(err, req, res, next) {
 
 app.get('/', clientRoutes.landing);
 app.get('/client', clientRoutes.home);
-app.get('/waiters', employeeRoutes.home);
+app.get('/login', employeeRoutes.home);
 app.post('/waiters', employeeRoutes.getData);
 
 app.use(errorHandler);
