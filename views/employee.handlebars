@@ -11,7 +11,7 @@
         <div class="w-100"></div>
         <div class="row">
             <div class="col-md-6 col-sm-12">
-                <form action="/login">
+                <form action="/waiters/siyanda"  method="post">
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Select your name</label>
                         <select class="form-control" name="name_employee"  required>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Pass code</label>
-                        <input type="text" class="form-control" name="pass_code"  placeholder="enter 4 digit code" required>
+                        <input type="password" pattern="[0-9]{4}" title="4 letter pincode" class="form-control" name="pass_code"  placeholder="enter 4 digit code" required>
                     </div>
 
                     <button type="submit" class="btn btn-dark">Login</button>
