@@ -56,7 +56,8 @@ function errorHandler(err, req, res, next) {
   }
 
 app.get('/', clientRoutes.landing);
-app.get('/client', clientRoutes.home)
+app.get('/client', clientRoutes.home);
+app.get('/waiters', employeeRoutes.home);
 
 app.use(errorHandler);
 
