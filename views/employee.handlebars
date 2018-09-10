@@ -1,0 +1,37 @@
+<div class="employeeSide">
+    <img class="image" src="./img/cover4e.jpeg" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="col text-center">
+                    <h3 class="mb-5">Good day Employee</h3>
+                </div>
+            </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <form action="/login">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select your name</label>
+                        <select class="form-control" name="name_employee"  required>
+                            <option value="siyanda">siyanda</option>
+                            <option value="{{employee}}">{{employee}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Pass code</label>
+                        <input type="text" class="form-control" name="pass_code"  placeholder="enter 4 digit code" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class='centered'>
+        <h6>Copyright &copy; 2018. Ikofu </h6>
+    </footer>
+
+</div>
