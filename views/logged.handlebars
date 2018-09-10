@@ -1,0 +1,67 @@
+<div class="logged">
+    <img class="image" src="./img/cover3.jpeg" alt="">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5 mb-3">
+                <h2 class="text-center bg-warning text-light">Welcome back {{employee}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-5">
+                <h4 class="text-center text-light">Use the following table to select 3 working days for the week</h4>
+            </div>
+            <div class="w-100"></div>
+            <div class="row">
+                <div class="col">
+                    <form action="/waiters/siyanda" method="POST">
+                        <table class="table table-hover table-warning mb-5">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Monday</th>
+                                    <th scope="col">Tuesday</th>
+                                    <th scope="col">Wednesday</th>
+                                    <th scope="col">Thursday</th>
+                                    <th scope="col">Friday</th>
+                                    <th scope="col">Saturday</th>
+                                    <th scope="col">Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Monday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Tuesday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Wednesday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Thursday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Friday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Saturday">
+                                    </th>
+                                    <th>
+                                        <input type="checkbox" name="weekdays" value="Sunday">
+                                    </th>
+                                </tr>
+                        </table>
+                        <input type="submit" class="btn btn-dark" value="Submit working days">
+                    </form>
+                </div>
+                <div class="w-100"></div>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="text-center text-success">{{message.info}}</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
