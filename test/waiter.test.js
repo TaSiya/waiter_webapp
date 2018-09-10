@@ -25,13 +25,13 @@ describe('Waiter Web Application tests', function () {
             it('select the admin', async function () {
                 let employeeService = Employee(pool);
                 let user = await employeeService.selectEmployee('admin');
-                let admin = user[0].employee;
+                let admin = user[0].first_name;
                 assert.strictEqual(admin, 'admin');
             });
             it('select the employee Odwa', async function () {
                 let employeeService = Employee(pool);
                 let user = await employeeService.selectEmployee('Odwa');
-                let odwa = user[0].employee;
+                let odwa = user[0].first_name;
                 assert.strictEqual(odwa, 'Odwa');
             });
         });
@@ -55,6 +55,7 @@ describe('Waiter Web Application tests', function () {
                 assert.strictEqual(pass, 1994);
             })
         });
+        
     });
 
     describe('Client side tests', function () {
