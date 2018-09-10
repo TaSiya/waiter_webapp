@@ -8,7 +8,7 @@ const session = require('express-session');
 const ClientRoutes = require('./src/routes/clientRoutes');
 const EmployeeRoutes = require('./src/routes/employeeRoutes');
 const ClientServices = require('./src/services/clientServices');
-const EmployeeServices = require('./src/services/employeeServices');
+const EmployeeServices = require('./src/services/waiterServices');
 const pg = require("pg");
 const Pool = pg.Pool;
 

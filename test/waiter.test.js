@@ -1,6 +1,6 @@
 const assert = require('assert');
 const Client = require('../src/services/clientServices');
-const Employee = require('../src/services/employeeServices');
+const Employee = require('../src/services/waiterServices');
 const pg = require('pg');
 
 const Pool = pg.Pool;
