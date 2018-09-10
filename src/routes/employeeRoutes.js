@@ -9,8 +9,15 @@ module.exports = function (employee) {
     }
     async function getData (req, res, next) {
         try{
-
-            res.render('logged');
+            let user = req.body.name_employee;
+            console.log(user);
+            if(user === 'admin'){
+                res.render('days');
+            }
+            else {
+                res.render('logged');
+            }
+            
         } catch (err) {
             next(err);
         }
