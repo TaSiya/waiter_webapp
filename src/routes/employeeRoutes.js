@@ -1,8 +1,8 @@
-module.exports = function (employeeService) {
+module.exports = function (employeeService, weekdaysService) {
     async function home (req, res, next) {
         try{
             let users = await employeeService.allEmployees();
-            res.render('employee', {users})
+            res.render('login', {users})
         } catch (err) {
             next(err);
         }
@@ -12,12 +12,13 @@ module.exports = function (employeeService) {
             let user = req.body.name_employee;
             let pass = parseInt(req.body.pass_code);
             console.log(pass);
-            let userData = await employeeService.selectEmployee(user);
-            if(user === 'admin' && pass === userData[0].passcode){
-                res.render('days');
+            let username = await employeeService.selectEmployee(user);
+            let userData = await weekdaysService.allDays();
+            if(user === 'admin' && pass === username[0].passcode){
+                res.render('adminPage');
             }
-            else if(user !== '' && pass === userData[0].passcode){
-                res.render('logged');
+            else if(user !== '' && pass === username[0].passcode){
+                res.render('employeePage', {userData});
             }
             else{
                 req.flash('info', 'Please enter a valid username or passcode');
@@ -27,8 +28,17 @@ module.exports = function (employeeService) {
             next(err);
         }
     }
+    async function displayDays (req, res, next) {
+        try{
+            
+            res.redirect('/employeePage');
+        } catch(err) {
+            next(err);
+        }
+    }
     return {
         home,
-        getData
+        getData,
+        displayDays
     }
 }

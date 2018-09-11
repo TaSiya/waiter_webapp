@@ -8,7 +8,8 @@ const session = require('express-session');
 const ClientRoutes = require('./src/routes/clientRoutes');
 const EmployeeRoutes = require('./src/routes/employeeRoutes');
 const ClientServices = require('./src/services/clientServices');
-const EmployeeServices = require('./src/services/waiterServices');
+const WaiterServices = require('./src/services/waiterServices');
+const WeekdaysServices = require('./src/services/weekdaysServices');
 const pg = require("pg");
 const Pool = pg.Pool;
 
@@ -46,9 +47,10 @@ const pool = new Pool({
   });
 
 const clientServices = ClientServices(pool);
-const employeeServices = EmployeeServices(pool);
+const waiterServices = WaiterServices(pool);
+const weekdays = WeekdaysServices(pool);
 const clientRoutes = ClientRoutes(clientServices);
-const employeeRoutes = EmployeeRoutes(employeeServices);
+const employeeRoutes = EmployeeRoutes(waiterServices, weekdays);
 
 function errorHandler(err, req, res, next) {
     res.status(500);
@@ -59,6 +61,7 @@ app.get('/', clientRoutes.landing);
 app.get('/client', clientRoutes.home);
 app.get('/login', employeeRoutes.home);
 app.post('/waiters', employeeRoutes.getData);
+app.get('/waiters/:username', employeeRoutes.displayDays);
 
 app.use(errorHandler);
 
