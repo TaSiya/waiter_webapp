@@ -28,7 +28,7 @@ app.use(session({
     saveUninitialized: true
   }));
   // initialise the flash middleware
-  app.use(flash());
+app.use(flash());
 
 app.use(express.static('public'));
 
@@ -60,8 +60,8 @@ function errorHandler(err, req, res, next) {
 app.get('/', clientRoutes.landing);
 app.get('/client', clientRoutes.home);
 app.get('/login', employeeRoutes.home);
-app.post('/waiters', employeeRoutes.getData);
-app.get('/waiters/:username', employeeRoutes.displayDays);
+app.post('/waiters/:username', employeeRoutes.getData);
+app.get('/waiters/', employeeRoutes.displayDays);
 
 app.use(errorHandler);
 

@@ -15,10 +15,10 @@ module.exports = function (employeeService, weekdaysService) {
             let username = await employeeService.selectEmployee(user);
             let userData = await weekdaysService.allDays();
             if(user === 'admin' && pass === username[0].passcode){
-                res.render('adminPage');
+                res.render('adminPage', user);
             }
             else if(user !== '' && pass === username[0].passcode){
-                res.render('employeePage', {userData});
+                res.render('employeePage', {userData, user});
             }
             else{
                 req.flash('info', 'Please enter a valid username or passcode');
